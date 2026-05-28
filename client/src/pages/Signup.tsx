@@ -1,11 +1,10 @@
 import { useState, FormEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 
 export default function Signup() {
   const { register } = useAuth();
-  const nav = useNavigate();
   const [form, setForm] = useState({ name: '', email: '', password: '' });
   const [loading, setLoading] = useState(false);
 
@@ -15,7 +14,7 @@ export default function Signup() {
     try {
       await register(form.name, form.email, form.password);
       toast.success('Account created! Complete your profile.');
-      nav('/profile');
+      // route redirects to /profile automatically once user state is set
     } catch (err: unknown) {
       const msg = (err as { response?: { data?: { error?: string } } })?.response?.data?.error;
       toast.error(msg || 'Signup failed');

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL ?? '/api',
+  baseURL: import.meta.env.VITE_API_URL || '/api',
   headers: { 'Content-Type': 'application/json' },
 });
 
@@ -14,10 +14,11 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (res) => res,
   (err) => {
-    const hasToken = !!localStorage.getItem('token');
-    if (err.response?.status === 401 && hasToken) {
+    // Only force-logout if a token exists (i.e. an authenticated session expired).
+    // Login/register 401s should propagate normally so the error toast shows.
+    if (err.response?.status === 401 && localStorage.getItem('token')) {
       localStorage.removeItem('token');
-      window.location.href = '/login';
+      window.dispatchEvent(new Event('auth:logout'));
     }
     return Promise.reject(err);
   },

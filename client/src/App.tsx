@@ -25,7 +25,7 @@ export default function App() {
       <main className="max-w-6xl mx-auto px-4 py-6">
         <Routes>
           <Route path="/login"        element={user ? <Navigate to="/" /> : <Login />} />
-          <Route path="/signup"       element={user ? <Navigate to="/" /> : <Signup />} />
+          <Route path="/signup"       element={user ? <Navigate to="/profile" /> : <Signup />} />
           <Route path="/"             element={<Protected><Dashboard /></Protected>} />
           <Route path="/generate"     element={<Protected><Generator /></Protected>} />
           <Route path="/search"       element={<Protected><JobSearch /></Protected>} />
