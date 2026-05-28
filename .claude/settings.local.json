@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(npm install *)",
+      "Bash(node -e \"const li = require\\('linkedin-jobs-api'\\); console.log\\(typeof li.query\\);\")",
+      "Bash(npm uninstall *)",
+      "Bash(node -e \"require\\('dotenv'\\).config\\(\\); require\\('./services/scraperService'\\); console.log\\('OK'\\)\")",
+      "Bash(node server.js)",
+      "Read(//tmp/**)",
+      "Bash(pkill -f \"node server.js\")",
+      "Read(//private/tmp/**)",
+      "Bash(npx vite *)",
+      "Bash(curl -s http://localhost:8000/)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(node -e \"require\\('groq-sdk'\\)\")",
+      "Bash(rm server/server.js server/config/db.js server/middleware/auth.js server/models/User.js server/models/Profile.js server/models/Application.js server/controllers/authController.js server/controllers/jobController.js server/controllers/messageController.js server/routes/auth.js server/routes/messages.js server/routes/jobs.js server/routes/applications.js server/routes/profile.js server/services/aiService.js server/services/scraperService.js)",
+      "Bash(rm client/src/App.jsx client/src/main.jsx client/vite.config.js client/src/api/axios.js client/src/context/AuthContext.jsx client/src/components/MessageModal.jsx client/src/components/Navbar.jsx client/src/pages/Login.jsx client/src/pages/Signup.jsx client/src/pages/Dashboard.jsx client/src/pages/Generator.jsx client/src/pages/JobSearch.jsx client/src/pages/LinkedInSearch.jsx client/src/pages/Applications.jsx client/src/pages/Profile.jsx)",
+      "Bash(npx tsc *)",
+      "Bash(pkill -f \"tsx server.ts\")",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(curl -s http://localhost:5173/src/index.css)",
+      "Bash(curl -s http://localhost:5173/src/App.tsx)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)"
+    ]
+  }
+}

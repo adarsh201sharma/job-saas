@@ -1,0 +1,39 @@
+{
+  "name": "job-saas-server",
+  "version": "1.0.0",
+  "description": "Backend for Job Application SaaS",
+  "main": "dist/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "dev": "nodemon --exec tsx server.ts"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "cheerio": "^1.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "groq-sdk": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.0",
+    "multer": "^2.1.1",
+    "pdf-parse": "^2.4.5",
+    "puppeteer": "^23.5.3"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.1.0",
+    "@types/node": "^25.9.1",
+    "nodemon": "^3.1.7",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3"
+  }
+}
